@@ -61,7 +61,14 @@ export function Contact({ onShowToast }) {
         const res = await fetch(personalInfo.formspreeEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(formData)
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            _replyto: formData.email,
+            _subject: `Portfolio Message from ${formData.name}: ${formData.subject || 'New Inquiry'}`
+          })
         });
         if (!res.ok) throw new Error('Form submission error');
       } else {

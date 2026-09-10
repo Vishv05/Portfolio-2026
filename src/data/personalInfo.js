@@ -57,8 +57,8 @@ export const personalInfo = {
     isPlaceholder: false,
   },
 
-  // Contact Form Integration Settings (can be configured directly or via VITE_FORMSPREE_ENDPOINT)
-  formspreeEndpoint: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FORMSPREE_ENDPOINT) || "",
+  // Contact Form Integration Settings (configured with official Formspree endpoint)
+  formspreeEndpoint: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FORMSPREE_ENDPOINT) || "https://formspree.io/f/xnpqwpgz",
   emailJsConfig: {
     serviceId: "",
     templateId: "",
