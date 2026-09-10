@@ -4,7 +4,7 @@
 >
 > A premium, modern, and interactive portfolio presenting Vishv Bhavsar as a versatile technology professional with expertise spanning software development, artificial intelligence, data analytics, and modern UI/UX design.
 
-[![Live Demo](https://img.shields.io/badge/demo-online-emerald?style=for-the-badge&logo=githubpages&logoColor=white)](https://vishv05.github.io/Portfolio/)
+[![Live Demo](https://img.shields.io/badge/demo-online-emerald?style=for-the-badge&logo=githubpages&logoColor=white)](https://vishv05.github.io/Portfolio-2026/)
 [![Built with React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-8-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
@@ -101,8 +101,8 @@ src/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Vishv05/Portfolio.git
-   cd Portfolio
+   git clone https://github.com/Vishv05/Portfolio-2026.git
+   cd Portfolio-2026
    ```
 
 2. **Install dependencies:**
@@ -163,7 +163,7 @@ This repository includes a continuous deployment workflow at `.github/workflows/
    * Go to **Settings** → **Pages** (in the left sidebar).
    * Under **Build and deployment** → **Source**, select **GitHub Actions**.
 3. Every subsequent push to `main` will automatically lint, build, and deploy your live portfolio at:
-   **`https://vishv05.github.io/Portfolio/`**
+   **`https://vishv05.github.io/Portfolio-2026/`**
 
 ### 2. Manual Deployment via CLI (`gh-pages`)
 If you prefer deploying directly from your local terminal without waiting for GitHub Actions:
@@ -196,7 +196,7 @@ This builds the site to `dist/` and automatically commits and pushes it to the `
 **Vishv Bhavsar**
 * **Education:** Integrated M.Sc. (IT) — GLS University ('27) & BSc.IT (GLS University)
 * **GitHub:** [@Vishv05](https://github.com/Vishv05)
-* **Live Portfolio:** [vishv05.github.io/Portfolio](https://vishv05.github.io/Portfolio/)
+* **Live Portfolio:** [vishv05.github.io/Portfolio-2026](https://vishv05.github.io/Portfolio-2026/)
 * **Location:** Ahmedabad, Gujarat, India
 
 ---
