@@ -1,0 +1,127 @@
+/**
+ * Verified Professional Certifications
+ * Synchronized with official Vishv Bhavsar Resume 2026
+ */
+
+export const certifications = [
+  {
+    id: "oracle-oci-genai-pro",
+    title: "Oracle Cloud Infrastructure 2025 Generative AI Professional",
+    issuer: "Oracle",
+    issueDate: "Sep 2025",
+    expiryDate: "Sep 2027",
+    credentialId: "1Z0-1127-25 (Scored 84%)",
+    verificationUrl: "https://catalog-education.oracle.com",
+    filePath: "./certificates/Oracle Cloud Infrastructure 2025 Certified Generative AI Professional.pdf",
+    fileName: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional.pdf",
+    badgeColor: "indigo",
+    gradient: "from-indigo-600 to-purple-700",
+    description: "Rigorous professional certification demonstrating deep mastery of OCI Generative AI services, LLM fine-tuning, retrieval-augmented generation (RAG), vector databases, and enterprise AI architectures (Exam score: 84%).",
+    skillsCovered: ["OCI Generative AI", "LLM Fine-Tuning", "RAG Systems", "Vector Databases", "Prompt Engineering", "Cloud Infrastructure"]
+  },
+  {
+    id: "google-genai-academy",
+    title: "Google Cloud Gen AI Academy Completion Certificate",
+    issuer: "Google Cloud & Hack2Skill",
+    issueDate: "May 2025",
+    expiryDate: "Lifetime Credential",
+    credentialId: "2025H2S04GENAI-A00381",
+    verificationUrl: "https://cloud.google.com/training",
+    filePath: "./certificates/Hack2skill-Certificate.png",
+    fileName: "Hack2skill-Certificate.png",
+    badgeColor: "emerald",
+    gradient: "from-emerald-600 to-teal-700",
+    description: "Completed comprehensive Gen AI Academy training covering Google Vertex AI, Gemini multimodal models, Imagen, Streamlit, and building production Multimodal RAG pipelines.",
+    skillsCovered: ["Google Vertex AI", "Gemini APIs", "Multimodal RAG", "Streamlit", "Imagen", "Prompt Engineering"]
+  },
+  {
+    id: "oracle-ai-foundations",
+    title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+    issuer: "Oracle",
+    issueDate: "Aug 2025",
+    expiryDate: "Aug 2027",
+    credentialId: "1Z0-1122-25",
+    verificationUrl: "https://catalog-education.oracle.com",
+    filePath: "./certificates/eCertificate(Oracle).pdf",
+    fileName: "eCertificate(Oracle).pdf",
+    badgeColor: "purple",
+    gradient: "from-purple-600 to-indigo-800",
+    description: "Certified foundational knowledge in Machine Learning algorithms, Deep Learning, Natural Language Processing, Computer Vision, and Oracle AI Cloud Services.",
+    skillsCovered: ["Machine Learning Foundations", "Deep Learning", "NLP Concepts", "Computer Vision", "OCI AI Services"]
+  },
+  {
+    id: "microsoft-data-analyst",
+    title: "Microsoft Data Analyst Certificate",
+    issuer: "Microsoft Learn",
+    issueDate: "Aug 2025",
+    expiryDate: "Lifetime Credential",
+    credentialId: "vishvbhavsarjigneshkumar-5305",
+    verificationUrl: "https://learn.microsoft.com",
+    filePath: "./certificates/Microsoft Data Analyst.pdf",
+    fileName: "Microsoft Data Analyst.pdf",
+    badgeColor: "blue",
+    gradient: "from-blue-600 to-indigo-700",
+    description: "Demonstrated advanced competencies in relational data modeling, DAX queries, Power BI interactive dashboard creation, and statistical data transformation.",
+    skillsCovered: ["Power BI", "Data Modeling", "DAX Expressions", "Data Transformation", "Visual Analytics", "KPI Dashboards"]
+  },
+  {
+    id: "tata-genai-data-analytics",
+    title: "Tata GenAI Powered Data Analytics Job Simulation",
+    issuer: "Tata Group & Forage",
+    issueDate: "Feb 2026",
+    expiryDate: "Lifetime Credential",
+    credentialId: "TATA-GENAI-2026-VISHV",
+    verificationUrl: "https://www.theforage.com",
+    filePath: "./certificates/GenAI Powered Data Analytics Job Simulation (Certificate of Completion).pdf",
+    fileName: "GenAI Powered Data Analytics Job Simulation (Certificate of Completion).pdf",
+    badgeColor: "cyan",
+    gradient: "from-cyan-600 to-blue-700",
+    description: "Completed business simulation on leveraging Generative AI and advanced data analytics pipelines to solve enterprise challenges and generate visual executive insights.",
+    skillsCovered: ["Generative AI Analytics", "Data Storytelling", "Executive Reporting", "Exploratory Analysis", "Business Intelligence"]
+  },
+  {
+    id: "scrum-fundamentals-certified",
+    title: "Scrum Fundamentals Certified (SFC™)",
+    issuer: "SCRUMstudy",
+    issueDate: "2025",
+    expiryDate: "Lifetime Credential",
+    credentialId: "1126204",
+    verificationUrl: "https://www.scrumstudy.com",
+    filePath: "./certificates/ScrumFundamentalsCertified-VishvBhavsar-1126204.pdf",
+    fileName: "ScrumFundamentalsCertified-VishvBhavsar-1126204.pdf",
+    badgeColor: "amber",
+    gradient: "from-amber-500 to-orange-700",
+    description: "Certified proficiency in Agile and Scrum methodologies, sprint cycle orchestration, cross-functional team collaboration, user story mapping, and iterative software delivery.",
+    skillsCovered: ["Agile Methodologies", "Scrum Framework", "Sprint Planning", "Backlog Refinement", "Cross-Functional Collaboration"]
+  },
+  {
+    id: "deloitte-data-analytics-simulation",
+    title: "Data Analytics Virtual Internship & Simulation",
+    issuer: "Deloitte & Forage",
+    issueDate: "Dec 2025",
+    expiryDate: "Lifetime Credential",
+    credentialId: "DELOITTE-DA-2025-VB",
+    verificationUrl: "https://www.theforage.com",
+    filePath: "./certificates/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_ziA7A5TSFjbLNPjXY_1766057438760_completion_certificate.pdf",
+    fileName: "Deloitte Data Analytics Completion Certificate.pdf",
+    badgeColor: "teal",
+    gradient: "from-teal-600 to-emerald-800",
+    description: "Completed rigorous enterprise case studies encompassing forensic data analysis, statistical dashboard generation, and executive data presentation.",
+    skillsCovered: ["Forensic Data Analysis", "Tableau", "Business Communication", "Data Quality Auditing", "Data Storytelling"]
+  },
+  {
+    id: "code-without-barriers-copilot",
+    title: "Code; Without Barriers: Work Smarter with AI using Microsoft Copilot",
+    issuer: "Microsoft & Code; Without Barriers",
+    issueDate: "2025",
+    expiryDate: "Lifetime Credential",
+    credentialId: "MSFT-COPILOT-CWB-VB",
+    verificationUrl: "https://learn.microsoft.com",
+    filePath: "./certificates/Tata GenAI Powered Data Analytics.pdf",
+    fileName: "Tata GenAI Powered Data Analytics.pdf",
+    badgeColor: "sky",
+    gradient: "from-sky-600 to-indigo-700",
+    description: "Earned professional credential demonstrating practical proficiency in leveraging Generative AI and Microsoft Copilot to optimize workflow automation, developer productivity, and AI-assisted problem-solving.",
+    skillsCovered: ["Microsoft Copilot", "Generative AI Productivity", "AI-Assisted Development", "Prompt Engineering", "Workflow Automation"]
+  }
+];

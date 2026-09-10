@@ -1,0 +1,87 @@
+Total Pages: 2
+
+=== PAGE 1 ===
+VISHV BHAVSAR  
+MSc.IT Student at GLS University 
+Maninagar, Ahmedabad, Gujarat  |  +91 9924014723  |  vishvbhavsar2004@gmail.com 
+linkedin.com/in/vishv-bhavsar-b1507b290   |   vishv05.github.io 
+PROFESSIONAL SUMMARY  
+Analytical and detail-oriented MSc IT student with a strong foundation in data analysis, statistics, and data-driven 
+decision-making. Proficient in Python, SQL, and data visualization, with hands-on experience in data cleaning, 
+exploratory data analysis, and translating complex datasets into actionable business insights. Certified in Data 
+Analytics and AI foundations, with exposure to cloud-based data tools and business case simulations. Seeking an 
+entry-level Data Analyst role to apply analytical skills, technical expertise, and a results-oriented mindset to a growth-
+driven organization. 
+SKILLS  
+Technical Skills: Data Analysis, Data Cleaning, Data Visualization, Python, SQL, Excel, NumPy, Pandas, Power BI 
+Tools & Platforms: Power BI, Tableau, Looker, BigQuery, Google Cloud 
+Other Technical: Python (Flask), Django, HTML, CSS, JavaScript, React 
+Core Competencies: Requirement Analysis, User-Centered Design, User Research, Stakeholder Engagement, Problem 
+Solving, Communication, Collaboration 
+WORK EXPERIENCE  
+HRDM Global Solutions Jul 2025 – Present 
+UI/UX Designer & Front-End Developer New Naroda, Nikol, Ahmedabad 
+● Leading end-to-end design and development of the company's professional website using Django (backend), 
+HTML/CSS/JavaScript (frontend), and responsive UI/UX practices. 
+● Collaborate with stakeholders to gather requirements and design intuitive, role-based dashboards (Candidate 
+vs. Client) with application tracking. 
+Cognifyz Technologies Feb 2026 – Mar 2026 
+Data Analysis Intern Nagpur, Maharashtra (Remote) 
+● Performed exploratory data analysis (EDA) on a real-world restaurant dataset using Python (Pandas, NumPy, 
+Matplotlib, Seaborn) to uncover trends in cuisine performance, pricing, and city-wise distribution. 
+● Analyzed the impact of online delivery on customer ratings and the correlation between votes and ratings, 
+documenting insights in a structured data analysis report. 
+Prodigy InfoTech Feb 2026 – Feb 2026 
+Data Science Intern Ahmedabad, Gujarat (Remote) 
+● Built regression and decision tree models for predictive analysis and implemented sentiment analysis using 
+TF-IDF and Logistic Regression, evaluated via accuracy and confusion matrix. 
+● Conducted large-scale dataset analysis (100K+ records) with data cleaning, feature engineering, and 
+visualization; earned a Certificate of Completion and Letter of Recommendation. 
+Zidio Development May 2025 – Jul 2025 
+UI/UX Designer Bengaluru, Karnataka (Remote) 
+● Collaborated with the design and development team to create user-centered wireframes and prototypes for 
+web-based applications. 
+● Delivered high-quality design assets and interactive prototypes, applying visual hierarchy and accessibility 
+principles to enhance usability. 
+
+=== PAGE 2 ===
+PROJECTS  
+SmartSpend — Personal Finance Data Analysis 
+Built a data-driven personal finance analysis project to track and analyze spending patterns and generate actionable 
+financial insights. Collected and cleaned transactional data using Python (Pandas, NumPy), performed exploratory 
+data analysis (EDA), and identified spending trends across essentials, discretionary expenses, and savings categories. 
+LiteraryHub — Book Selling Application 
+Designed and developed a user-friendly book-selling app featuring seamless navigation, secure payment integration, 
+and personalized recommendations. 
+Solar Tracking Device (Arduino) 
+Developed a solar tracking system using Arduino Uno, LDR sensors, and servo motors to optimize solar panel 
+efficiency by automatically aligning with the sun's position. 
+E-Learning Platform Wireframe (Zidio Internship Project) 
+Created wireframes for an online education platform, focusing on user flow, course navigation, and responsive 
+design. 
+Task Management App Wireframe (Zidio Internship Project) 
+Designed task management wireframes with dashboard view, task categorization, and team collaboration flow. 
+CERTIFICATIONS  
+Tata GenAI Powered Data Analytics — Forage Feb 2026 
+Oracle Cloud Infrastructure 2025 Generative AI Professional — Oracle Sep 2025 
+Microsoft Data Analyst Certificate — Microsoft Aug 2025 
+Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate — Oracle Aug 2025 
+Google Gen AI Exchange Program — Google & Hack2Skill May 2025 
+Data Analytics Virtual Internship — Deloitte (Forage) May 2025 
+Innovation Through Design: Think, Make, Break, Repeat — The University of Sydney Feb 2025 
+EDUCATION  
+Master of Science in Information Technology Jun 2025 – Apr 2027 
+GLS University 
+Bachelor of Science in Information Technology Jun 2022 – Apr 2025 
+GLS University 
+XII (Commerce) 2021 – 2022 
+Doon International Public School 
+X 2019 – 2020 
+Doon International Public School 
+AWARDS & ACHIEVEMENTS  
+● Qualified for Google Cloud Arcade Novice Tier (Jul 2025). 
+● Scored 84% in Oracle Cloud Infrastructure 2025 Generative AI Professional certification exam (1Z0-1127-25). 
+● Completed 36+ Google Cloud Skill Badges across AI/ML, Data, Infrastructure, and Gen AI tracks. 
+● Winner, Logo Design Competition — Cyber Shadez Events, GLS University (3 consecutive years). 
+● Built and deployed a personal portfolio website showcasing UI/UX, graphic design, and Python projects. 
+

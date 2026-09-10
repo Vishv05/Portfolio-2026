@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Vishv Bhavsar</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #07090e;
+      color: #f9fafb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      text-align: center;
+      padding: 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(6, 182, 212, 0.08) 45%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #ffffff 30%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.5);
+    }
+    .countdown {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #64748b;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  </style>
+  <script>
+    // Handle Single Page Application path segment preservation for GitHub Pages
+    var pathSegmentsToKeep = 1; // 1 for username.github.io/repo-name/
+    var l = window.location;
+    var redirectTarget = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+    
+    // Check if hosted under a repository path
+    var pathParts = l.pathname.split('/').filter(Boolean);
+    if (pathParts.length > 0 && l.hostname.endsWith('github.io')) {
+      redirectTarget += '/' + pathParts[0] + '/';
+    } else {
+      redirectTarget += '/';
+    }
+
+    var secondsLeft = 3;
+    var interval = setInterval(function() {
+      secondsLeft--;
+      var el = document.getElementById('timer');
+      if (el) el.textContent = secondsLeft;
+      if (secondsLeft <= 0) {
+        clearInterval(interval);
+        window.location.replace(redirectTarget);
+      }
+    }, 1000);
+  </script>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="content">
+    <div class="badge">404 Error</div>
+    <h1>404</h1>
+    <p>The page you are looking for doesn't exist or has moved. Returning you to the portfolio homepage.</p>
+    <a href="./" class="btn" id="home-link">Back to Homepage &rarr;</a>
+    <div class="countdown">Auto-redirecting in <span id="timer">3</span>s...</div>
+  </div>
+</body>
+</html>
