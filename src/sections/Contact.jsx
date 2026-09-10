@@ -337,7 +337,7 @@ export function Contact({ onShowToast }) {
                   </Button>
 
                   <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-2 font-mono">
-                    Structured with form validation. Ready to link with Formspree, EmailJS or backend API.
+                    Direct delivery to Vishv's inbox. Typically responds within 24 hours.
                   </p>
                 </form>
               )}
