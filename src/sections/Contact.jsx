@@ -56,24 +56,42 @@ export function Contact({ onShowToast }) {
     setIsSubmitting(true);
 
     try {
-      // Check if Formspree endpoint is configured
-      if (personalInfo.formspreeEndpoint) {
-        const res = await fetch(personalInfo.formspreeEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-            _replyto: formData.email,
-            _subject: `Portfolio Message from ${formData.name}: ${formData.subject || 'New Inquiry'}`
+      // 1. Primary submission to Formspree
+      const formspreePromise = personalInfo.formspreeEndpoint
+        ? fetch(personalInfo.formspreeEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject,
+              message: formData.message,
+              _replyto: formData.email,
+              _subject: `Portfolio Message from ${formData.name}: ${formData.subject || 'New Inquiry'}`
+            })
           })
-        });
-        if (!res.ok) throw new Error('Form submission error');
-      } else {
-        // Mock simulated send with client confirmation
-        await new Promise(resolve => setTimeout(resolve, 800));
+        : new Promise(resolve => setTimeout(resolve, 800));
+
+      // 2. Automated response email to the sender via Google Apps Script (if configured)
+      const autoReplyPromise = personalInfo.googleScriptEndpoint
+        ? fetch(personalInfo.googleScriptEndpoint, {
+            method: 'POST',
+            mode: 'no-cors', // Essential for Google Apps Script Web App redirects
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject,
+              message: formData.message
+            })
+          }).catch(err => {
+            console.warn('Auto-responder delivery warning:', err);
+          })
+        : Promise.resolve();
+
+      const [res] = await Promise.all([formspreePromise, autoReplyPromise]);
+      if (personalInfo.formspreeEndpoint && res && !res.ok) {
+        throw new Error('Form submission error');
       }
 
       setIsSubmitted(true);

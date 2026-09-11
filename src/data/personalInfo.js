@@ -38,8 +38,8 @@ export const personalInfo = {
   },
 
   contact: {
-    email: "vishvbhavsar2004@gmail.com",
-    emailDisplay: "vishvbhavsar2004@gmail.com",
+    email: "coding.on.replit@gmail.com",
+    emailDisplay: "coding.on.replit@gmail.com",
     phone: "+91 9924014723",
     phoneDisplay: "+91 9924014723",
     linkedIn: "https://linkedin.com/in/vishv-bhavsar-b1507b290",
@@ -59,6 +59,8 @@ export const personalInfo = {
 
   // Contact Form Integration Settings (configured with official Formspree endpoint)
   formspreeEndpoint: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FORMSPREE_ENDPOINT) || "https://formspree.io/f/xnpqwpgz",
+  // Google Apps Script Auto-Responder Endpoint (sends confirmation email from your Gmail)
+  googleScriptEndpoint: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GOOGLE_SCRIPT_ENDPOINT) || "https://script.google.com/macros/s/AKfycbwtlg702s-n95c5ooWYVteW0brrv0wFguBt9xC9oort2_Bx10zmCK1Ht0a6ambJa-U/exec",
   emailJsConfig: {
     serviceId: "",
     templateId: "",
