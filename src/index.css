@@ -155,3 +155,109 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Print Optimization for Resume */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  /* Hide background elements, navigation, hero, main content, footer, floating elements */
+  nav,
+  header,
+  footer,
+  #main-content,
+  .no-print,
+  #resume-action-bar,
+  button,
+  [role="dialog"] > div:first-child, /* modal backdrop */
+  [role="dialog"] [aria-label="Close dialog"],
+  [role="dialog"] > div > div:first-child, /* modal header bar */
+  .fixed.inset-0.bg-black\/60,
+  .fixed.inset-0.bg-black\/80 {
+    display: none !important;
+  }
+
+  /* Reset document flow */
+  html, body, #root, #root > div {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .fixed.inset-0.z-50 {
+    position: static !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  [role="dialog"] {
+    position: static !important;
+    display: block !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  [role="dialog"] .overflow-y-auto {
+    overflow: visible !important;
+    max-height: none !important;
+    padding: 0 !important;
+  }
+
+  #resume-document-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 9.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Force clean black text on white paper even in dark mode */
+  .dark #resume-document-sheet,
+  .dark [role="dialog"] {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  #resume-document-sheet * {
+    color: #0f172a !important;
+    background-color: transparent !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  #resume-document-sheet h1 {
+    color: #0f172a !important;
+    font-size: 18pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  #resume-document-sheet h2 {
+    color: #1e1b4b !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    padding-bottom: 2pt !important;
+    margin-top: 8pt !important;
+    margin-bottom: 4pt !important;
+    font-size: 10.5pt !important;
+  }
+}
+

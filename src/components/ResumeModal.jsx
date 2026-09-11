@@ -12,7 +12,46 @@ import { certifications } from '../data/certifications';
 
 export function ResumeModal({ isOpen, onClose }) {
   const handlePrint = () => {
-    window.print();
+    const pdfUrl = encodeURI(personalInfo.resume.filePath);
+
+    // Create an invisible iframe targeting the uploaded 2-page PDF
+    let iframe = document.getElementById('resume-pdf-print-frame');
+    if (iframe) {
+      iframe.remove();
+    }
+
+    iframe = document.createElement('iframe');
+    iframe.id = 'resume-pdf-print-frame';
+    iframe.setAttribute(
+      'style',
+      'position: fixed; right: 0; bottom: 0; width: 0; height: 0; border: 0; visibility: hidden;'
+    );
+    document.body.appendChild(iframe);
+
+    let printed = false;
+    const trigger = () => {
+      if (printed) return;
+      printed = true;
+      try {
+        iframe.contentWindow?.focus();
+        iframe.contentWindow?.print();
+      } catch {
+        // Fallback: If browser restricts direct iframe PDF printing, open the 2-page PDF
+        window.open(pdfUrl, '_blank');
+      }
+    };
+
+    iframe.onload = () => {
+      setTimeout(trigger, 300);
+    };
+
+    setTimeout(() => {
+      if (!printed) {
+        trigger();
+      }
+    }, 1200);
+
+    iframe.src = pdfUrl;
   };
 
   return (
@@ -25,7 +64,7 @@ export function ResumeModal({ isOpen, onClose }) {
     >
       <div className="space-y-6">
         {/* Action Header Bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3.5 sm:p-4 rounded-xl bg-indigo-500/[0.06] border border-indigo-500/20">
+        <div id="resume-action-bar" className="no-print flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3.5 sm:p-4 rounded-xl bg-indigo-500/[0.06] border border-indigo-500/20">
           <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
             <span className="font-semibold text-slate-900 dark:text-white">Document:</span>{' '}
             <span className="font-mono text-xs text-indigo-600 dark:text-indigo-400">{personalInfo.resume.fileName}</span>
@@ -56,7 +95,7 @@ export function ResumeModal({ isOpen, onClose }) {
         </div>
 
         {/* Rendered Document Sheet */}
-        <div className="p-4 sm:p-8 rounded-2xl bg-white dark:bg-[#07090e] border border-slate-200 dark:border-white/10 shadow-lg text-slate-900 dark:text-slate-100 font-sans space-y-6">
+        <div id="resume-document-sheet" className="p-4 sm:p-8 rounded-2xl bg-white dark:bg-[#07090e] border border-slate-200 dark:border-white/10 shadow-lg text-slate-900 dark:text-slate-100 font-sans space-y-6">
           
           {/* Header */}
           <div className="border-b border-slate-200 dark:border-white/10 pb-5">
