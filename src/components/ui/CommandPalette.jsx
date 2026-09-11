@@ -40,6 +40,7 @@ export function CommandPalette({
     { id: 'nav-certifications', title: 'Certifications & Credentials', category: 'Navigation', icon: ArrowRight, action: () => scrollToSection('certifications') },
     { id: 'nav-education', title: 'Education & GLS University', category: 'Navigation', icon: ArrowRight, action: () => scrollToSection('education') },
     { id: 'nav-contact', title: 'Get In Touch / Contact', category: 'Navigation', icon: ArrowRight, action: () => scrollToSection('contact') },
+    { id: 'nav-telemetry', title: 'Live Telemetry & Web Analytics', category: 'Navigation', icon: ArrowRight, action: () => scrollToSection('telemetry') },
   ];
 
   const projectItems = projects.map(p => ({

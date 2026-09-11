@@ -5,6 +5,7 @@ import { Github, Linkedin } from './ui/Icons';
 import { personalInfo } from '../data/personalInfo';
 import { navigationItems } from '../data/navigation';
 import { scrollToSection } from '../utils/helpers';
+import { TelemetryAnalytics } from './TelemetryAnalytics';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -17,6 +18,9 @@ export function Footer() {
   return (
     <footer className="border-t border-slate-200/80 dark:border-white/[0.08] bg-white/50 dark:bg-[#07090e]/80 backdrop-blur-xl relative z-10 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Real-Time Live Telemetry & Web Analytics Module */}
+        <TelemetryAnalytics />
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           
           {/* Brand Col */}
