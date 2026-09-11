@@ -82,7 +82,8 @@ export function Contact({ onShowToast }) {
               name: formData.name,
               email: formData.email,
               subject: formData.subject,
-              message: formData.message
+              message: formData.message,
+              portfolioUrl: personalInfo.contact?.portfolioUrl || 'https://vishv05.github.io/Portfolio-2026/'
             })
           }).catch(err => {
             console.warn('Auto-responder delivery warning:', err);

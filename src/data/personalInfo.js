@@ -46,7 +46,7 @@ export const personalInfo = {
     linkedInDisplay: "linkedin.com/in/vishv-bhavsar-b1507b290",
     github: "https://github.com/Vishv05",
     githubDisplay: "github.com/Vishv05",
-    portfolioUrl: "https://vishv05.github.io",
+    portfolioUrl: "https://vishv05.github.io/Portfolio-2026/",
     location: "Maninagar, Ahmedabad, Gujarat, India",
   },
 
