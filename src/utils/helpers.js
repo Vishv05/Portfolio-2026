@@ -63,7 +63,7 @@ export function downloadVCard(info) {
     `N:Bhavsar;Vishv;;;`,
     `ORG:GLS University`,
     `TITLE:${info.roleTitle}`,
-    `EMAIL;type=INTERNET;type=WORK:${info.contact?.email || 'coding.on.replit@gmail.com'}`,
+    `EMAIL;type=INTERNET;type=WORK:${info.contact?.email || 'vishvbhavsar2004@gmail.com'}`,
     `TEL;type=CELL:${info.contact?.phone || '+919924014723'}`,
     `URL:${info.contact?.portfolioUrl || 'https://vishv05.github.io/Portfolio-2026/'}`,
     `ADR;type=WORK:;;${info.location || 'Ahmedabad, Gujarat, India'};;;;`,
