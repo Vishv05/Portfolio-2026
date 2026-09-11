@@ -7,7 +7,7 @@ import { educationHistory } from '../data/education';
 
 export function Education() {
   return (
-    <section id="education" className="py-20 md:py-28 relative">
+    <section id="education" className="py-20 md:py-28 relative scroll-mt-16 md:scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badgeText="Academic Background"

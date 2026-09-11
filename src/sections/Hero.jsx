@@ -33,7 +33,7 @@ export function Hero({ isDark, onOpenResume, onShowToast }) {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 lg:py-32 overflow-hidden"
+      className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 lg:py-32 overflow-hidden scroll-mt-20"
     >
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-500/10 dark:bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none -z-10" />

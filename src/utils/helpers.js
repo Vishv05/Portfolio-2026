@@ -2,18 +2,31 @@
  * Utility helpers
  */
 
-export function scrollToSection(sectionId) {
+export function scrollToSection(sectionId, customOffset) {
+  if (typeof window === 'undefined') return;
+
   const cleanId = sectionId.replace('#', '');
   const element = document.getElementById(cleanId);
-  if (element) {
-    const navHeight = 80;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + (window.scrollY || window.pageYOffset) - navHeight;
+  if (!element) return;
 
+  // Header offset: 64px on mobile screens, 80px on larger displays
+  const isMobile = window.innerWidth < 768;
+  const navOffset = customOffset ?? (isMobile ? 64 : 80);
+
+  const rect = element.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  const targetY = Math.max(0, Math.round(rect.top + scrollTop - navOffset));
+
+  // If already at the target within a tiny threshold, avoid redundant scrolling
+  if (Math.abs(scrollTop - targetY) < 4) return;
+
+  try {
     window.scrollTo({
-      top: offsetPosition,
+      top: targetY,
       behavior: 'smooth'
     });
+  } catch {
+    window.scrollTo(0, targetY);
   }
 }
 

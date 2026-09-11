@@ -28,7 +28,7 @@ export function Skills({ onSelectProject }) {
     : skillCategories.filter(cat => cat.id === activeTab);
 
   return (
-    <section id="skills" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="skills" className="py-20 md:py-28 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       
       {/* Ambient background glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-500/5 dark:bg-cyan-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />

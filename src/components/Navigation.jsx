@@ -24,17 +24,40 @@ export function Navigation({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open to prevent background scrolling
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (e, href) => {
-    e.preventDefault();
-    scrollToSection(href);
-    setMobileMenuOpen(false);
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+      document.body.style.overflow = '';
+      // Allow the drawer closing animation to start so the mobile screen clears cleanly,
+      // then smoothly glide to the requested section
+      setTimeout(() => {
+        scrollToSection(href);
+      }, 120);
+    } else {
+      scrollToSection(href);
+    }
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'py-2.5 bg-white/80 dark:bg-[#07090e]/80 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-2xl dark:shadow-black/20'
+        isScrolled || mobileMenuOpen
+          ? 'py-2.5 bg-white/90 dark:bg-[#07090e]/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-2xl dark:shadow-black/20'
           : 'py-5 bg-transparent'
       }`}
     >
@@ -165,67 +188,85 @@ export function Navigation({
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu & Backdrop */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden bg-white/95 dark:bg-[#07090e]/95 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/10 overflow-hidden shadow-xl"
-          >
-            <div className="px-4 pt-3 pb-6 space-y-1 max-h-[80vh] overflow-y-auto">
-              {/* Search shortcut for mobile */}
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenCommandPalette();
-                }}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-slate-100 dark:bg-white/5 text-sm text-slate-700 dark:text-slate-300 font-medium mb-3 cursor-pointer"
-              >
-                <span className="flex items-center gap-2.5">
-                  <Search className="w-4 h-4 text-indigo-500" />
-                  Quick Command Search
-                </span>
-                <kbd className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-white/10">⌘K</kbd>
-              </button>
+          <>
+            {/* Backdrop overlay to dismiss menu when tapping outside */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                document.body.style.overflow = '';
+              }}
+              className="fixed inset-0 bg-slate-950/50 backdrop-blur-xs -z-10 lg:hidden"
+              aria-hidden="true"
+            />
 
-              {navigationItems.map((item) => {
-                const isActive = activeSection === item.href.replace('#', '');
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'bg-indigo-600 text-white font-semibold'
-                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5'
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                );
-              })}
-
-              <div className="pt-4 mt-2 border-t border-slate-200 dark:border-white/10 flex flex-col gap-2">
-                <Button
-                  variant="primary"
-                  size="md"
-                  icon={FileText}
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
+              className="lg:hidden bg-white/95 dark:bg-[#07090e]/95 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/10 overflow-hidden shadow-2xl relative z-20"
+            >
+              <div className="px-4 pt-3 pb-6 space-y-1 max-h-[75vh] overflow-y-auto">
+                {/* Search shortcut for mobile */}
+                <button
+                  type="button"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onOpenResume();
+                    document.body.style.overflow = '';
+                    onOpenCommandPalette();
                   }}
-                  className="w-full"
+                  className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-slate-100 dark:bg-white/5 text-sm text-slate-700 dark:text-slate-300 font-medium mb-3 cursor-pointer active:scale-[0.98] transition-transform"
                 >
-                  View & Download Resume
-                </Button>
+                  <span className="flex items-center gap-2.5">
+                    <Search className="w-4 h-4 text-indigo-500" />
+                    Quick Command Search
+                  </span>
+                  <kbd className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-white/10">⌘K</kbd>
+                </button>
+
+                {navigationItems.map((item) => {
+                  const isActive = activeSection === item.href.replace('#', '');
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all active:scale-[0.98] ${
+                        isActive
+                          ? 'bg-indigo-600 text-white font-semibold shadow-sm shadow-indigo-500/20'
+                          : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 active:bg-slate-200/60 dark:active:bg-white/10'
+                      }`}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                })}
+
+                <div className="pt-4 mt-2 border-t border-slate-200 dark:border-white/10 flex flex-col gap-2">
+                  <Button
+                    variant="primary"
+                    size="md"
+                    icon={FileText}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      document.body.style.overflow = '';
+                      onOpenResume();
+                    }}
+                    className="w-full"
+                  >
+                    View & Download Resume
+                  </Button>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

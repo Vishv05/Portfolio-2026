@@ -184,7 +184,7 @@ export function Projects({ onSelectProject }) {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="projects" className="py-20 md:py-28 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-10 w-[500px] h-[300px] bg-indigo-500/5 dark:bg-purple-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />

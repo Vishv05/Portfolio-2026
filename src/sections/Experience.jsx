@@ -14,7 +14,7 @@ export function Experience() {
   const activeExp = experiences[selectedStationIndex] || experiences[0];
 
   return (
-    <section id="experience" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="experience" className="py-20 md:py-28 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-10 w-[500px] h-[300px] bg-cyan-500/5 dark:bg-indigo-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />

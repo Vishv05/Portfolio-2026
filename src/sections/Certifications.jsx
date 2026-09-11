@@ -59,7 +59,7 @@ export function Certifications({ onShowToast }) {
   };
 
   return (
-    <section id="certifications" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="certifications" className="py-20 md:py-28 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-indigo-500/5 dark:bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
