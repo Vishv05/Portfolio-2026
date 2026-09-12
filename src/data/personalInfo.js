@@ -38,8 +38,8 @@ export const personalInfo = {
   },
 
   contact: {
-    email: "vishvbhavsar2004@gmail.com",
-    emailDisplay: "vishvbhavsar2004@gmail.com",
+    email: "coding.on.replit@gmail.com",
+    emailDisplay: "coding.on.replit@gmail.com",
     phone: "+91 9924014723",
     phoneDisplay: "+91 9924014723",
     linkedIn: "https://linkedin.com/in/vishv-bhavsar-b1507b290",
