@@ -1,18 +1,17 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Orbit, User, Camera } from 'lucide-react';
+import { Sparkles, Orbit, User } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { personalInfo } from '../data/personalInfo';
 import vishvCutout from '../assets/vishv-cutout.png';
 
-export function HeroMatrixHologram({ isDark, onShowToast }) {
+export function HeroMatrixHologram({ isDark }) {
   const canvasRef = useRef(null);
-  const fileInputRef = useRef(null);
   const prefersReducedMotion = useReducedMotion();
   
   // States: 'photo' or 'sphere'
   const [morphMode, setMorphMode] = useState('photo');
-  const [customImageSrc, setCustomImageSrc] = useState(vishvCutout || personalInfo.avatar?.imageUrl || './vishv-cutout.png');
+  const imageSrc = vishvCutout || personalInfo.avatar?.imageUrl || './vishv-cutout.png';
 
 
 
@@ -165,7 +164,7 @@ export function HeroMatrixHologram({ isDark, onShowToast }) {
   useEffect(() => {
     const img = new Image();
     img.crossOrigin = 'Anonymous';
-    img.src = customImageSrc;
+    img.src = imageSrc;
 
     img.onload = () => {
       initParticlesFromImage(img);
@@ -174,25 +173,7 @@ export function HeroMatrixHologram({ isDark, onShowToast }) {
     img.onerror = () => {
       initParticlesFromImage(null);
     };
-  }, [customImageSrc, initParticlesFromImage]);
-
-  // Handle custom photo file upload directly on the 3D matrix
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const result = event.target?.result;
-        if (result) {
-          setCustomImageSrc(result);
-          setMorphMode('photo');
-          morphProgressRef.current = 1;
-          onShowToast?.('Photo loaded into 3D Matrix Hologram!', 'success');
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  }, [imageSrc, initParticlesFromImage]);
 
   // Main Canvas Render Loop
   useEffect(() => {
@@ -414,15 +395,6 @@ export function HeroMatrixHologram({ isDark, onShowToast }) {
       {/* Halo glow aura */}
       <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-indigo-500/20 via-cyan-500/10 to-purple-500/20 blur-3xl pointer-events-none -z-10" />
 
-      {/* Hidden file input for custom photo upload */}
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*"
-        onChange={handlePhotoUpload}
-        className="hidden"
-      />
-
       {/* Top Morphing Mode Control Ribbon */}
       <div className="relative z-20 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2 p-1 sm:p-1.5 rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg text-[11px] sm:text-xs">
         <button
@@ -449,19 +421,6 @@ export function HeroMatrixHologram({ isDark, onShowToast }) {
         >
           <Orbit className="w-3.5 h-3.5" />
           <span>3D Sphere</span>
-        </button>
-
-        <div className="h-4 w-px bg-slate-200 dark:bg-white/10" />
-
-        {/* Upload Custom Photo Button */}
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="p-1.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors cursor-pointer"
-          title="Upload or change photo on 3D Matrix"
-          aria-label="Upload photo to 3D matrix"
-        >
-          <Camera className="w-4 h-4" />
         </button>
       </div>
 
@@ -501,7 +460,7 @@ export function HeroMatrixHologram({ isDark, onShowToast }) {
       {/* UX instruction micro-tip */}
       <div className="text-[10px] text-slate-400 font-mono text-center mt-1 flex items-center gap-1.5">
         <Sparkles className="w-3 h-3 text-indigo-500" />
-        <span>Move cursor to rotate 3D face relief • Click camera icon to load photo</span>
+        <span>Hover & drag cursor to rotate 3D hologram</span>
       </div>
 
     </div>

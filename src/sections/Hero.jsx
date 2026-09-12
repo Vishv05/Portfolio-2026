@@ -198,7 +198,7 @@ export function Hero({ isDark, onOpenResume, onShowToast }) {
                   transition={{ duration: 0.3 }}
                   className="w-full flex justify-center"
                 >
-                  <HeroMatrixHologram isDark={isDark} onShowToast={onShowToast} />
+                  <HeroMatrixHologram isDark={isDark} />
                 </motion.div>
               )}
             </AnimatePresence>
