@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vishv05.github.io/Portfolio-2026/sitemap.xml

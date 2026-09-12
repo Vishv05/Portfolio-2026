@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="vb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#07090E" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded Base -->
+  <rect width="64" height="64" rx="16" fill="url(#bg-grad)" />
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="url(#vb-grad)" stroke-width="2" stroke-opacity="0.4" />
+  <!-- Monogram VB -->
+  <path d="M16 20L25 44H29L38 20H32L27 35.5L22 20H16Z" fill="url(#vb-grad)" />
+  <path d="M36 20H45C48.5 20 51 22 51 25.5C51 27.8 49.5 29.5 47.5 30.2C50 31 52 33 52 36.5C52 40.5 48.8 44 44.5 44H36V20ZM41.5 29.5H44.5C46 29.5 47 28.5 47 27C47 25.5 46 24.5 44.5 24.5H41.5V29.5ZM41.5 39.5H45C46.8 39.5 48 38.3 48 36.5C48 34.8 46.8 33.5 45 33.5H41.5V39.5Z" fill="#F8FAFC" />
+</svg>
